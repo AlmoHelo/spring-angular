@@ -1,0 +1,58 @@
+<section>
+    <form [formGroup]="patientForm" class="all">
+        <h1>Modifier le patient n°{{patient.id}}</h1>
+        <div>
+            <label for="nom">Nom:
+                <input type="text" placeholder="{{patient.nom}}" [(ngModel)]="patient.nom" formControlName="nom">
+            </label>
+        </div>
+        <div>
+            <label for="prenom">Prénom:
+                <input type="text" placeholder="{{patient.prenom}}" [(ngModel)]="patient.prenom" formControlName="prenom">
+            </label>
+        </div>
+        <div>
+            <label for="dateDeNaissance">Date de naissance:
+                <input type="date" formControlName="dateDeNaissance" [(ngModel)]="patient.dateDeNaissance">
+            </label>
+        </div>
+        <div>
+            <label for="sexe">Sexe:
+                <select name="sexe" [(ngModel)]="patient.sexe" formControlName="sexe" >
+                    <option value="Femme" [selected]="patient.sexe == 'Femme'">Femme</option>
+                    <option value="Homme" [selected]="patient.sexe == 'Homme'">Homme</option>
+                    <option value="Autre" [selected]="patient.sexe == 'Autre'">Autre</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label for="numeroSecuriteSociale">Numéro de sécurité social:
+                <input type="number" formControlName="numeroSecuriteSociale" placeholder="{{patient.numeroSecuriteSociale}}" [(ngModel)]="patient.numeroSecuriteSociale">
+            </label>
+        </div>
+        <form [formGroup]="adresseForm" class="adresseForm">
+            <p>Adresse</p>
+            <label for="numero">Numéro:
+                <input type="text" placeholder="{{patient.adresse.numero}}" [(ngModel)]="patient.adresse.numero" formControlName="numero">
+            </label>
+            <label for="rue">Rue:
+                <input type="text" placeholder="{{patient.adresse.rue}}" [(ngModel)]="patient.adresse.rue" formControlName="rue">
+            </label>
+            <label for="cp"> Code postal:
+                <input type="text" placeholder="{{patient.adresse.cp}}" [(ngModel)]="patient.adresse.cp" formControlName="cp">
+            </label>
+            <label for="ville">Ville:
+                <input type="text" placeholder="{{patient.adresse.ville}}" [(ngModel)]="patient.adresse.ville" formControlName="ville">
+            </label>
+        </form>
+        <div>
+            <label for="infirmiere">Infirmieres:
+                <select formControlName="infirmiere" [(ngModel)]="patient.infirmiere"  >
+                    <option *ngFor="let infirmiere of infirmiereList" [value]="infirmiere.id" [selected]="infirmiere.nom == infirmiere.nom">{{infirmiere.nom}}
+                    </option>
+                </select>
+            </label>
+        </div>
+    </form>
+    <button class="sendUpdate" (click)="sendUpdate()">Envoyer</button>
+</section>

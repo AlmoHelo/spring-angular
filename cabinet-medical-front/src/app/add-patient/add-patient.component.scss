@@ -1,0 +1,94 @@
+section {
+    width: 60%;
+    margin: 5vh auto;
+    font-size: 20px;
+    text-align: center;
+    h1 {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 2vh;
+    }
+    div {
+        margin: 2vh 0;
+        label {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1vh;
+            input,
+            select {
+                margin: 2vh;
+            }
+        }
+    }
+}
+.all {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+
+input,
+select {
+    background-color: rgb(240, 233, 233);
+    border: none;
+    border-bottom: 2px solid rgb(105, 103, 103);
+    &::placeholder{
+        font-size: 20px;
+    }
+}
+.adresseForm {
+    display: flex;
+    flex-direction: column;
+    margin: 2vh 0;
+    label {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1vh;
+        input {
+            margin: 2vh;
+        }
+    }
+}
+
+.sendUpdate {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 1vh;
+    width: 20vh;
+}
+
+button {
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    color: black;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    background-color: #fc2f70;
+}
+
+button::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(112, 219, 246);
+    transform-origin: center bottom;
+    transform: scaleY(0);
+    transition: transform 0.25s ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:hover::before {
+    transform-origin: center top;
+    transform: scaleY(1);
+}

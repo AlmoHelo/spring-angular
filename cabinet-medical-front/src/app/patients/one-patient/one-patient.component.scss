@@ -1,0 +1,74 @@
+.myPatient{
+    width: 50%;
+    margin: 8vh auto;
+    h1{
+        text-align: center;
+        font-size: 25px;
+    }
+    p{
+        text-align: center;
+        font-size: 20px;
+        margin: 1vh 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        margin-top: 5vh;
+        button{
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 2vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1vh;
+            i{
+                margin-right: 1vh;
+            }
+        }
+    }
+}
+
+h1, span{
+    font-weight: bold;
+    margin: 2vh 0;
+}
+span{
+    text-decoration: underline;
+}
+
+button {
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    color: black;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    background-color: #fc2f70;
+  }
+  
+  button::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(112, 219, 246);
+    transform-origin: center bottom;
+    transform: scaleY(0);
+    transition: transform 0.25s ease-in-out;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  button:hover::before {
+    transform-origin: center top;
+    transform: scaleY(1);
+  }

@@ -1,0 +1,58 @@
+<section>
+    <form [formGroup]="newPatientForm" class="all">
+        <h1>Ajouter un nouveau patient</h1>
+        <div>
+            <label for="nom">Nom:
+                <input type="text" formControlName="nom">
+            </label>
+        </div>
+        <div>
+            <label for="prenom">Prénom:
+                <input type="text" formControlName="prenom">
+            </label>
+        </div>
+        <div>
+            <label for="dateDeNaissance">Date de naissance:
+                <input type="date" formControlName="dateDeNaissance">
+            </label>
+        </div>
+        <div>
+            <label for="sexe">Sexe:
+                <select name="sexe" formControlName="sexe" >
+                    <option value="Femme">Femme</option>
+                    <option value="Homme">Homme</option>
+                    <option value="Autre">Autre</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label for="numeroSecuriteSociale">Numéro de sécurité social:
+                <input type="number" formControlName="numeroSecuriteSociale">
+            </label>
+        </div>
+        <form [formGroup]="adresseForm" class="adresseForm">
+            <p>Adresse</p>
+            <label for="numero">Numéro:
+                <input type="text" formControlName="numero">
+            </label>
+            <label for="rue">Rue:
+                <input type="text" formControlName="rue">
+            </label>
+            <label for="cp"> Code postal:
+                <input type="text" formControlName="cp">
+            </label>
+            <label for="ville">Ville:
+                <input type="text" formControlName="ville">
+            </label>
+        </form>
+        <div>
+            <label for="infirmiere">Infirmieres:
+                <select formControlName="infirmiere">
+                    <option *ngFor="let infirmiere of infirmiereList" [value]="infirmiere.id" [selected]="infirmiere.nom == infirmiere.nom">{{infirmiere.nom}}
+                    </option>
+                </select>
+            </label>
+        </div>
+    </form>
+    <button class="sendUpdate" (click)="sendNewPatient()">Envoyer</button>
+</section>
