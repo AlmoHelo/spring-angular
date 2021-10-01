@@ -1,1 +1,16 @@
-<p>one-patient works!</p>
+<div class="myPatient">
+    <h1>Patient n°{{patient.id}}</h1>
+    <div>
+        <p><span>Nom :</span> {{patient.nom}}</p>
+        <p><span>Prénom :</span> {{patient.prenom}}</p>
+        <p><span>Date de naissance :</span> {{patient.dateDeNaissance}}</p>
+        <p><span>Sexe :</span> {{patient.sexe}}</p>
+        <p><span>Numéro de sécurité sociale :</span> {{patient.numeroSecuriteSociale}}</p>
+        <p *ngIf="patient.adresse !== null"><span>Adresse :</span> {{patient.adresse.numero}} {{patient.adresse.rue}} {{patient.adresse.cp}} {{patient.adresse.ville}}</p>
+        <p *ngIf="patient.infirmiere !== null"><span>Infirmiere :</span> {{patient.infirmiere.nom}}</p>
+    </div>
+    <div class="btn">
+        <button><i class="fas fa-pencil-alt"></i>Modifier</button>
+        <button><i class="fas fa-trash-alt"></i>Supprimer</button>
+    </div>
+</div>
