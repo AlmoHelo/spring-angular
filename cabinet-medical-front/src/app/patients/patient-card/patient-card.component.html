@@ -1,0 +1,10 @@
+<div class="onePatient">
+    <div>
+        <p> <span> Nom: </span> {{patient.nom}}</p>
+        <p><span> Prénom:</span> {{patient.prenom}}</p>
+    </div>
+    <p><span>Date de naissance:</span> {{patient.dateDeNaissance}}</p>
+    <button (click)="afficherUnPatient(patient.id)">
+        Voir plus
+    </button>
+</div>

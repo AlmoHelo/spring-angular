@@ -1,0 +1,20 @@
+.onePatient{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: 8vh;
+    margin: 2vh auto;
+    padding: 1vh;
+    align-items: center;
+    font-size: 18px;
+    filter: drop-shadow(0 0 0.75rem rgb(158, 148, 148));
+    background-color: rgb(231, 219, 219);
+    div{
+        p{
+            margin: 1vh 0;
+        }
+    }
+}
+span{
+    font-weight: bold;
+}

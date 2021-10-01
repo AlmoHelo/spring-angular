@@ -1,3 +1,8 @@
 <section>
-    
+    <div class="addPatient">
+        <a routerLink="/ajouterPatient">
+            Ajouter un nouveau patient
+        </a>
+    </div>
+    <app-patient-card [patient]="patient" *ngFor="let patient of patients"></app-patient-card>
 </section>

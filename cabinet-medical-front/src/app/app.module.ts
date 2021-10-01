@@ -7,6 +7,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { PatientsComponent } from './patients/patients.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PatientCardComponent } from './patients/patient-card/patient-card.component';
+import { OnePatientComponent } from './patients/one-patient/one-patient.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { PatientsComponent } from './patients/patients.component';
     NavbarComponent,
     HomePageComponent,
     FooterComponent,
-    PatientsComponent
+    PatientsComponent,
+    PatientCardComponent,
+    OnePatientComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
