@@ -19,5 +19,6 @@ export class PatientsComponent implements OnInit {
       this.patients = patients;
     })
   }
+  
 
 }

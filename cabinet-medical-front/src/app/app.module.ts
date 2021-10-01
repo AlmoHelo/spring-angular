@@ -10,6 +10,9 @@ import { PatientsComponent } from './patients/patients.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PatientCardComponent } from './patients/patient-card/patient-card.component';
 import { OnePatientComponent } from './patients/one-patient/one-patient.component';
+import { UpdatePatientComponent } from './update-patient/update-patient.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddPatientComponent } from './add-patient/add-patient.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,16 @@ import { OnePatientComponent } from './patients/one-patient/one-patient.componen
     FooterComponent,
     PatientsComponent,
     PatientCardComponent,
-    OnePatientComponent
+    OnePatientComponent,
+    UpdatePatientComponent,
+    AddPatientComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

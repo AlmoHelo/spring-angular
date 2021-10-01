@@ -10,7 +10,7 @@
         <p *ngIf="patient.infirmiere !== null"><span>Infirmiere :</span> {{patient.infirmiere.nom}}</p>
     </div>
     <div class="btn">
-        <button><i class="fas fa-pencil-alt"></i>Modifier</button>
-        <button><i class="fas fa-trash-alt"></i>Supprimer</button>
+        <button (click)="update(patient)"><i class="fas fa-pencil-alt"></i>Modifier</button>
+        <button (click)="delete(patient.id)"><i class="fas fa-trash-alt"></i>Supprimer</button>
     </div>
 </div>

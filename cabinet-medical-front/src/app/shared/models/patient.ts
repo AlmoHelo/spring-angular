@@ -6,7 +6,7 @@ export interface Patient{
     nom: String,
     prenom: String,
     dateDeNaissance: Date,
-    sexe: string,
+    sexe: String,
     numeroSecuriteSociale: number,
     adresse: Adresse,
     infirmiere: Infirmiere

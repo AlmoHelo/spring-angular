@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Patient } from 'src/app/shared/models/patient';
 import { PatientService } from 'src/app/shared/services/patient.service';
 
@@ -12,14 +12,24 @@ export class OnePatientComponent implements OnInit {
 
   patient!: Patient;
 
-  constructor(private service: PatientService, private route : ActivatedRoute) { }
+  constructor(private service: PatientService, private route : ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     this.service.getOneById(id).subscribe((patient: Patient) => {
       this.patient = patient;
-      console.log(patient);
-      
+    })
+  }
+
+  update(patient: Patient){
+    this.service.donnees = patient;
+    this.router.navigate([`patients/${patient.id}/update`]);
+  }
+
+  delete(id: number){
+    console.log(id);
+    this.service.deleteById(id).subscribe((res: any) => {
+      this.router.navigate(["/"])
     })
   }
 
