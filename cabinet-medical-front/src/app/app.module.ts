@@ -13,6 +13,7 @@ import { OnePatientComponent } from './patients/one-patient/one-patient.componen
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddPatientComponent } from './add-patient/add-patient.component';
+import { InfirmieresComponent } from './infirmieres/infirmieres.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AddPatientComponent } from './add-patient/add-patient.component';
     OnePatientComponent,
     UpdatePatientComponent,
     AddPatientComponent,
+    InfirmieresComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+<section>
+    <div class="addInfirmiere">
+        <a routerLink="/infirmieres/addInfirmiere" routerLinkActive="active">
+            Ajouter un nouveau infirmier
+        </a>
+    </div>
+    <app-patient-card *ngFor="let infirmiere of infirmieres"></app-patient-card>
+</section>
